@@ -1,29 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public int coin; // Очки
+    public Text txtcoin;
     private void OnCollisionStay(Collision collision)
     {
         // машинка уничтожается при столкновении
-        if (collision.gameObject.CompareTag("Obj"))
+        if (collision.gameObject.CompareTag("Box")) // При тегге Box Добавляется 1 очко
         {
-
-            Destroy(gameObject); //уничтожается объект
-             // включается камера, где написано что объект проиграл
-            //Time.timeScale = 0;
-            //isPaused = true;
+            coin = coin + 1;
+        }
+        // машинка уничтожается при столкновении
+        if (collision.gameObject.CompareTag("q")) // При тегге Player Добавляется 2 очка
+        {
+            coin = coin + 2;
         }
     }
 
-  /*  private void OnTriggerEnter(Collider collision)
-    {
-        //CoinCollect.coinCount += 1;
-        Destroy(collision.gameObject);
-    }*/
-
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -32,6 +27,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        txtcoin.text = "" + coin;
     }
 }
