@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Follow_Camera.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Player_Control.cs" />
     <Compile Include="Assets\Scripts\Spawn_object.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
