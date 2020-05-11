@@ -22,7 +22,7 @@ public class Spawn_object : MonoBehaviour
                  new Vector3(Random.Range(-23, 23), 0, Random.Range(-23, 23)),
                  Quaternion.Euler(new Vector3(0, -180, 0))
                  );
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(Random.Range(1f, 7f));
         }
     }
     // Update is called once per frame
